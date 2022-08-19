@@ -1,0 +1,17 @@
+<style>
+  * {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+</style>
+<div class="total-header">
+  <div class="card-header">
+    <h1>{{title | titlecase}}</h1>
+    <nav>
+      <a routerLink="/dashboard">Dashboard</a>
+      <a routerLink="/heroes">Heroes</a>
+    </nav>
+  </div>
+</div>
+<!-- <app-heroes></app-heroes> -->
+<router-outlet></router-outlet>
+<app-messages></app-messages>

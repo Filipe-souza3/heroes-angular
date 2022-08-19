@@ -1,0 +1,41 @@
+<div class="total-hero">
+    <div class="card-hero">    
+        <!-- <h2>{{hero.name | uppercase}} Details</h2>
+        <div><span>id: </span>{{hero.id}}</div>
+        <div><span>name: </span>{{hero.name}}</div> -->
+        <div>
+            <label for="new-hero">Hero name: </label>
+            <input id="new-hero" #heroName />
+            <!-- estou peganddo o valor do input e mandando para o component -->
+            <button (click)="Add(heroName.value); heroName.value=''" type="button" class="add-buton">Add hero</button>
+            <!-- ngmodel é um bind de 2 mãos, porem para usar precisa importar no module, ele ja altera a variavel no component para ja da para mandar salvar direto no component -->
+            <!-- <input id="name" [(ngModel)]="hero.name" placeholder="name"> -->
+
+        </div>
+        <div class="hero-list">
+            <h2>My Heroes</h2>
+            <ul class="heroes">
+                <li *ngFor="let hero of heroes">
+                    <a routerLink="/detail/{{hero.id}}">
+                        <span>{{hero.id}} - </span>{{hero.name}}
+                    </a>
+                    <button (click)="Delete(hero)" type="button" class="delete" title="delete hero">x</button>
+                </li>
+            </ul>
+        </div>
+        <!-- <div>
+            <h2>My Heroes</h2>
+            <ul class="heroes">
+                <li *ngFor="let hero of heroes">
+                    <button [class.selected]="hero===selectedHero" type="button" class="button" (click)="onSelect(hero)">
+                        <span class="badge">{{hero.id}}</span>  - 
+                        <span class="name">{{hero.name}}</span>
+                    </button>
+                </li>
+            </ul>
+        </div> -->
+        <!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
+    </div>
+</div>
+
+
